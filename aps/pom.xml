@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pinkitec-aps</groupId>
+  <artifactId>pinkitec-aps</artifactId>
+  <version>4.1.7.0-SNAPSHOT</version>
+  
+  <parent>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-starter-parent</artifactId>
+	    <version>Finchley.SR2</version>
+	    <relativePath></relativePath>
+	</parent>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<pinkitec-kernel-version>4.1.7.0-SNAPSHOT</pinkitec-kernel-version>
+	</properties>
+	
+	<dependencies>
+		
+	
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-hystrix</artifactId>
+		    <version>1.4.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
+	   		<groupId>org.springframework.cloud</groupId>
+	   		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	    </dependency>
+		
+	   <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-openfeign</artifactId>
+	    </dependency>
+	    
+	   <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	    </dependency>
+	    
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>4.6</version>
+		</dependency>
+		
+		<!-- 
+		<dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-data-redis</artifactId>  
+        </dependency>
+         
+ 
+       <dependency>  
+            <groupId>org.springframework.session</groupId>  
+            <artifactId>spring-session-data-redis</artifactId>  
+        </dependency> 
+         -->
+        
+        <!-- <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-data-redis</artifactId>  
+        </dependency> --> 
+        
+        <dependency>
+			<groupId>com.pinkitec.paas</groupId>
+			<artifactId>pinkitec-data-mq</artifactId>
+			<version>4.1.7.0-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.pinkitec.paas</groupId>
+			<artifactId>pinkitec-paas-kernel</artifactId>
+			<version>${pinkitec-kernel-version}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.pinkitec.paas</groupId>
+            <artifactId>pinkitec-aps-r</artifactId>
+            <version>4.1.7.0-SNAPSHOT</version>
+        </dependency>
+		
+		
+		<dependency>
+			<groupId>com.liferay</groupId>
+			<artifactId>nl.captcha.simplecaptcha</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- <dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+ -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+		</dependency> -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.25</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.5.4</version>
+		</dependency>
+		
+	<!-- 	<dependency>
+   			 <groupId>org.firebirdsql.jdbc</groupId>
+    		<artifactId>jaybird-jdk18</artifactId>
+   			 <version>4.0.0-beta-1</version>
+		</dependency> -->
+		
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>pinkitec</id>
+			<url>http://wh.cloudmtm.com/nexus/repository/maven-developer/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>pinkitec</id>
+			<url>http://wh.cloudmtm.com/nexus/repository/maven-developer/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<distributionManagement>
+		<repository>
+			<id>pinkitec</id>
+			<url>http://wh.cloudmtm.com/nexus/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>pinkitec</id>
+			<url>http://wh.cloudmtm.com/nexus/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-dependencies</artifactId>
+	            <version>Finchley.SR2</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+	    </dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+	                <fork>true</fork>
+	            </configuration>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+	</build>
+</project>
